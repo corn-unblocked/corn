@@ -1,0 +1,34 @@
+html {
+	overflow: auto;
+}
+
+p {
+	margin-left: auto;
+	margin-right:auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	word-spacing: 20px;
+	text-align: center;
+}
+
+div.input {
+	display: flex;
+	justify-content: center;
+	height: 30px;
+}
+
+html, body, div, iframe {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	border: none;
+}
+
+iframe {
+	display: block;
+	width: 100%;
+	border: none;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
