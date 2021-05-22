@@ -14,3 +14,6 @@ for branch in $(cat "$1"); do
 	git cherry-pick master
 	git push "$branch" "$branch"
 done
+
+# Switch to master, pretty important
+git switch master
