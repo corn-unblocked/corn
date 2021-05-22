@@ -9,7 +9,7 @@ ssh-add "$2"
 
 # Get commit message
 git switch master
-msg = $(git log -1 --pretty=%B | head -1)
+msg=$(git log -1 --pretty=%B | head -1)
 
 # Script
 for branch in $(cat "$1"); do
