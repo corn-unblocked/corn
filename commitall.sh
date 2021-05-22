@@ -7,14 +7,20 @@
 eval $(ssh-agent -s)
 ssh-add "$2"
 
+# Get commit message
+git switch master
+msg = $(git log -1 --pretty=%B | head -1)
+
 # Script
 for branch in $(cat "$1"); do
 	git checkout "$branch"
-	git merge master
+	git merge master -m "$msg"
 	git pull "$branch"
 	git push "$branch" "$branch"
-	git push "$branch" master
 done
 
 # Switch to master, pretty important
 git switch master
+
+# Push all branches to origin
+git push -all origin
