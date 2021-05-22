@@ -23,4 +23,4 @@ done
 git switch master
 
 # Push all branches to origin
-git push -all origin
+git push --all origin
