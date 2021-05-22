@@ -13,6 +13,7 @@ for branch in $(cat "$1"); do
 	git merge master
 	git pull "$branch"
 	git push "$branch" "$branch"
+	git push "$branch" master
 done
 
 # Switch to master, pretty important
