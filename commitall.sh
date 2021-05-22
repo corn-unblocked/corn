@@ -10,8 +10,8 @@ ssh-add "$2"
 # Script
 for branch in $(cat "$1"); do
 	git checkout "$branch"
+	git merge master
 	git pull "$branch"
-	git cherry-pick master
 	git push "$branch" "$branch"
 done
 
