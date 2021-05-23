@@ -13,14 +13,19 @@ msg=$(git log -1 --pretty=%B | head -1)
 
 # Script
 for branch in $(cat "$1"); do
+	if [ -z $(git branch | grep "$branch") ]; then
+		git branch "$branch"
+		git checkout "$branch"
+	else
 	git checkout "$branch"
 	git merge master -m "$msg"
-	git pull "$branch"
-	git push "$branch" "$branch"
+	fi
+	git pull "$branch" "$branch"
+	git push --force "$branch" "$branch"
 done
 
 # Switch to master, pretty important
 git switch master
 
 # Push all branches to origin
-git push --all origin
+git push --all --force origin
