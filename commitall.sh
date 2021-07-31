@@ -17,8 +17,8 @@ for branch in $(cat "$1"); do
 		git branch "$branch"
 		git checkout "$branch"
 	else
-	git checkout "$branch"
-	git merge master -m "$msg"
+		git checkout "$branch"
+		git merge master -m "$msg"
 	fi
 	git pull "$branch" "$branch"
 	git push --force "$branch" "$branch"
