@@ -1,5 +1,4 @@
 hotcorn-ga
-wetcorn-tk
 hardcorn-ml
 cornsmash-cf
 cornvideos-gq
