@@ -3,9 +3,20 @@
 	<head>
 		<link rel="stylesheet" href="iframe.css">
 		<link rel="icon" type="image/png" href="../img/cornicon.png">
-		<title>Corn php-pr0xy</title>
+		<title>Corn pywb</title>
 	</head>
 	<body>
-		<iframe id="iframe" src="https://vaughanm.tk/proxy/"></iframe>
+		<p><a href="../index.html">Back</a> <a href="https://github.com/webrecorder/pywb">pywb</a> <a href="../license.txt">License</a></p>
+		<div class="input">
+			<input type="text" id="text">
+			<input type="button" value="Enter" onclick="enter()">
+		</div>
+		<iframe id="iframe" src=""></iframe>
+		<script>
+		function enter() {
+			let a = document.getElementById("text").value;
+			document.getElementById("iframe").src = "https://proxy.vaughanm.tk/live/" + a;
+		}
+		</script>
 	</body>
 </html>
