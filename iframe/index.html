@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="iframe.css">
-		<link rel="icon" type="image/png" href="../img/cornicon.png">
-		<title>Corn IFrame</title>
-	</head>
-	<body>
-		<p><a href="../index.html">Back</a> <a href="../license.txt">License</a></p>
-		<div class="input">
-			<input type="text" id="text">
-			<input type="button" value="Enter" onclick="enter()">
-		</div>
-		<iframe id="iframe" src=""></iframe>
-		<script>
-			function enter() {
-				let a = document.getElementById("text").value;
-				document.getElementById("iframe").src = a;
-			}
-		</script>
-	</body>
+  <head>
+    <link rel="stylesheet" href="iframe.css" />
+    <link rel="icon" type="image/png" href="../img/cornicon.png" />
+    <title>Corn IFrame HTML viewer</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index.html">Back</a>
+      <a href="../license.txt">License</a>
+    </p>
+    <div class="input">
+      <input type="text" id="text" />
+      <input type="button" id="enter_btn" value="Enter" onclick="enter()" />
+    </div>
+    <iframe id="iframe" src=""></iframe>
+    <script>
+      function enter() {
+        let a = document.getElementById("text").value;
+		if (!a) return alert("Please enter a URL to pr0xy!");
+        document.getElementById("iframe").src =
+          a;
+      }
+
+      document.getElementById("text").addEventListener("keydown", function (e) {
+        if (e.code === "Enter") {
+          document.getElementById("enter_btn").click();
+        }
+      });
+    </script>
+  </body>
 </html>
