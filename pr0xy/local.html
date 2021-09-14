@@ -15,7 +15,7 @@
       <input type="text" id="text" />
       <input type="button" id="enter_btn" value="Enter" onclick="enter()" />
     </div>
-    <iframe id="iframe" src="" allow="fullscreen" ></iframe>
+    <iframe id="iframe" src="" allow="fullscreen" sandbox="allow-forms allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
     <script>
       function enter() {
         let a = document.getElementById("text").value;
