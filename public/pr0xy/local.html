@@ -1,34 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="iframe.css" />
-    <link rel="icon" type="image/png" href="../img/cornicon.png" />
-    <title>Corn pywb</title>
-  </head>
-  <body>
-    <p>
-      <a href="../index.html">Back</a>
-      <a href="https://github.com/webrecorder/pywb">pywb</a>
-      <a href="../license.txt">License</a>
-    </p>
-    <div class="input">
-      <input type="text" id="text" />
-      <input type="button" id="enter_btn" value="Enter" onclick="enter()" />
-    </div>
-    <iframe id="iframe" src="" allow="fullscreen" sandbox="allow-forms allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-    <script>
-      function enter() {
-        let a = document.getElementById("text").value;
-		if (!a) return alert("Please enter a URL to pr0xy!");
-        document.getElementById("iframe").src =
-          "https://pr0xy.vaughanm.tk/live/" + a;
-      }
-
-      document.getElementById("text").addEventListener("keydown", function (e) {
-        if (e.code === "Enter") {
-          document.getElementById("enter_btn").click();
-        }
-      });
-    </script>
-  </body>
+	<head>
+		<link rel="stylesheet" href="iframe.css" />
+		<link rel="icon" type="image/png" href="../img/cornicon.png" />
+		<title>Corn corrosion</title>
+	</head>
+	<body>
+		<iframe id="iframe" src="https://hotcorn-corrosion.herokuapp.com" allow="fullscreen" sandbox="allow-forms allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+	</body>
 </html>
