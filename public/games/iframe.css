@@ -12,6 +12,13 @@ p {
 	text-align: center;
 }
 
+p.input {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 div.input {
 	display: flex;
 	justify-content: center;

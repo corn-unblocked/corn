@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="embed.css">
-		<title>Classic Minecraft</title>
+		<link rel="stylesheet" href="iframe.css">
+		<title>Minecraft (WebMC)</title>
 	</head>
 	<body>
-		<embed src="https://classic.minecraft.net">
+		<div class="input">
+			<p class="input">Server: </p>
+			<input type="text" id="server" value="95.111.249.143:10000">
+			<p class="input">Username: </p>
+			<input type="text" id="name">
+			<input type="button" id="enter" value="Play!" onclick="enter()">
+		</div>
+		<iframe id="iframe" src="https://hotcorn-gamecdn.web.app/minecraft/enter_name.html"></iframe>
+		<script>
+			function enter() {
+				let server = document.getElementById("server").value;
+				let username = document.getElementById("name").value;
+				document.getElementById("iframe").src = "https://hotcorn-gamecdn.web.app/minecraft/?server=" + server + "&nick=" + username + "&proxy=production"
+			}
+		</script>
 	</body>
 </html>
