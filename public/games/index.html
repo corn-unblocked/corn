@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html style="height: 100%;">
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/css/index.css">
 		<link rel="stylesheet" href="/css/games.css">
 		<link rel="icon" type="image/png" href="/img/cornicon.png">
@@ -11,8 +12,8 @@
 		<h1>Games</h1>
 		<div style="height:75%; flex-direction: row;">
 			<div style="flex: 25%">
-				<a style="text-align: center;" href="javascript:location.href = document.getElementById('iframe').src;">Open game fullscreen</a>
-				<a style="text-align: center;" href="/index.html">Back</a>
+				<a class="button" href="javascript:location.href = document.getElementById('iframe').src;">Open game fullscreen</a>
+				<a class="button" href="/index.html">Back</a>
 				<div id="gamelist"></div>
 			</div>
 			<iframe allow="fullscreen" id="iframe" src="iframe.html"></iframe>
@@ -25,6 +26,7 @@
 			games = Object.keys(gamelist);
 			for (i = 0; i < games.length; i++) {
 				button = document.createElement("button");
+				button.className = "button";
 				button.innerHTML = gamenames[games[i]];
 				button.addEventListener("click", switchGames.bind(null, games[i]), false);
 				document.getElementById("gamelist").appendChild(button);

@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="iframe.css" />
-    <link rel="icon" type="image/png" href="../img/cornicon.png" />
-    <title>Corn IFrame HTML viewer</title>
-  </head>
-  <body>
-    <p>
-      <a href="../index.html">Back</a>
-      <a href="../license.txt">License</a>
-    </p>
-    <div class="input">
-      <input type="text" id="text" />
-      <input type="button" id="enter_btn" value="Enter" onclick="enter()" />
-    </div>
-    <iframe id="iframe" src=""></iframe>
-    <script>
-      function enter() {
-        let a = document.getElementById("text").value;
-		if (!a) return alert("Please enter a URL to pr0xy!");
-        document.getElementById("iframe").src =
-          a;
-      }
-
-      document.getElementById("text").addEventListener("keydown", function (e) {
-        if (e.code === "Enter") {
-          document.getElementById("enter_btn").click();
-        }
-      });
-    </script>
-  </body>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/css/iframe.css">
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="icon" type="image/png" href="/img/cornicon.png">
+		<title>Corn IFrame HTML viewer</title>
+	</head>
+	<body>
+		<div class="center">
+			<div class="center-block">
+				<a class="button inline" href="/index.html">Back</a>
+				<a class="button inline" href="/license.txt">License</a>
+			</div>
+			<div class="center-block">
+				<input type="text" id="text" />
+				<button class="button inline" id="enter_btn" onclick="enter()">Enter</button>
+			</div>
+		</div>
+		<iframe id="iframe" src=""></iframe>
+		<script>
+			function enter() {
+				let a = document.getElementById("text").value;
+				if (!a) {
+					return alert("Please enter a URL to pr0xy!");
+				} else {
+					document.getElementById("iframe").src = a;
+				};
+			};
+			document.getElementById("text").addEventListener("keydown", function (e) { if (e.code === "Enter") { enter(); } });
+		</script>
+	</body>
 </html>

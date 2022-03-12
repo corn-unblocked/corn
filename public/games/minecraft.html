@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/css/iframe.css">
+		<link rel="stylesheet" href="/css/index.css">
 		<title>Minecraft (WebMC)</title>
 	</head>
 	<body>
-		<div class="input">
-			<p class="input">Server: </p>
-			<input type="text" id="server" value="95.111.249.143:10000">
-			<p class="input">Username: </p>
-			<input type="text" id="name">
-			<input type="button" id="enter" value="Play!" onclick="enter()">
+		<div class="center">
+			<div class="center-block">
+				<p class="inline">Server: </p>
+				<input class="inline" type="text" id="server" value="95.111.249.143:10000">
+			</div>
+			<div class="center-block">
+				<p class="inline">Username: </p>
+				<input class="inline" type="text" id="name">
+			</div>
+			<button class="button" id="enter" onclick="enter()">Play!</button>
 		</div>
 		<iframe id="iframe" src="https://hotcorn-gamecdn.web.app/minecraft/enter_name.html"></iframe>
 		<script>
