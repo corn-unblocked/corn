@@ -7,6 +7,12 @@ div {
 	flex-direction: column;
 }
 
+#gamelist {
+	margin-top: 5%;
+	height: 100%;
+	overflow: auto;
+}
+
 iframe {
 	flex: 75%;
 	margin: 1%;

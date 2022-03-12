@@ -11,6 +11,8 @@ var gamelist = {
 	"sans": "https://jcw87.github.io/c2-sans-fight/",
 	"smashkarts": "https://smashkarts.io",
 	"splix": "https://splix.io",
+	"gats": "https://gats.io",
+	"tetris": "https://tetris.com/games-content/play-tetris-content/resources/project-tetriscom/game/game-29A05D0315C8FF3C/if_game_html5.php",
 };
 
 var gamenames = {
@@ -26,4 +28,6 @@ var gamenames = {
 	"sans": "Sans Bossfight",
 	"smashkarts": "Smash Karts",
 	"splix": "Splix",
+	"gats": "Gats",
+	"tetris": "Tetris",
 };
