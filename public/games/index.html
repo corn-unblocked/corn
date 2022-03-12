@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html>
-	<link rel="stylesheet" href="../index.css">
+<html style="height: 100%;">
 	<head>
-		<link rel="icon" type="image/png" href="../img/cornicon.png">
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="stylesheet" href="/css/games.css">
+		<link rel="icon" type="image/png" href="/img/cornicon.png">
+		<script src="/scripts/gamelist.js"></script>
 		<title>Corn Games</title>
 	</head>
-	<body>
-		<img src="../img/corn.svg" alt="Corn Games" class="center">
-		<p>
-			<a href="shellshockers.html">Shell Shockers</a><br>
-			<a href="curvefever.html">Curve Fever</a><br>
-			<a href="merczone.html">Merc Zone</a><br>
-			<a href="minecraft.html">Minecraft</a><br>
-			<a href="1v1.html">1v1.lol</a><br>
-			<a href="zombsroyale.html">Zombs Royale</a><br>
-			<a href="tanuki.html">Tanuki Sunset</a><br>
-			<a href="ev.html">EV</a><br>
-			<a href="repuls.html">Repuls</a><br>
-			<a href="retrobowl.html">Retro Bowl</a><br>
-			<a href="cookieclicker.html">Cookie Clicker</a><br>
-			<a href="sans.html">Sans Bossfight</a>
-		</p>
-		<p>You can always try to access more games using <a href="../pr0xy/local.html">the pr0xy</a>.
-		<p><a href="../index.html">Back</a></p>
+	<body style="height: 100%;">
+		<h1>Games</h1>
+		<div style="height:75%; flex-direction: row;">
+			<div style="flex: 25%">
+				<a style="text-align: center;" href="javascript:location.href = document.getElementById('iframe').src;">Open game fullscreen</a>
+				<a style="text-align: center;" href="/index.html">Back</a>
+				<div id="gamelist" style="margin-top: 5%;"></div>
+			</div>
+			<iframe allow="fullscreen" id="iframe" src="iframe.html"></iframe>
+		</div>
 		<p class="bottom">Licensed under the <a href="../license.txt">MIT License</a>. Image under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a>.</p>
+		<script>
+			function switchGames(game) {
+				document.getElementById("iframe").src = "iframe.html#" + game;
+			};
+			games = Object.keys(gamelist);
+			for (i = 0; i < games.length; i++) {
+				button = document.createElement("button");
+				button.innerHTML = gamenames[games[i]];
+				button.addEventListener("click", switchGames.bind(null, games[i]), false);
+				document.getElementById("gamelist").appendChild(button);
+			};
+		</script>
 	</body>
 </html>

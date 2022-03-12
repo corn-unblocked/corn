@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/css/iframe.css" />
+		<link rel="icon" type="image/png" href="/img/cornicon.png" />
+		<script src="/scripts/gamelist.js"></script>
+		<title>Game iframe</title>
+	</head>
+	<body>
+		<iframe id="iframe" src="select.html"></iframe>
+		<script>
+			updateGame = function(){document.getElementById("iframe").src = gamelist[location.hash.substr(1)];};
+			if (location.hash.substr(1) != "") {
+				updateGame();
+			};
+			window.addEventListener("hashchange", updateGame, false);
+		</script>
+	</body>
+</html>

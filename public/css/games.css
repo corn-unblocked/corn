@@ -1,0 +1,17 @@
+head, body {
+	height: 100%;
+}
+
+div {
+	display: flex;
+	flex-direction: column;
+}
+
+iframe {
+	flex: 75%;
+	margin: 1%;
+}
+
+button {
+	margin: 1%;
+}

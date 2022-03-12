@@ -2,13 +2,17 @@ html {
 	overflow: auto;
 }
 
-html, body, div, embed {
+html, body, iframe {
 	margin: 0px;
 	padding: 0px;
 	height: 100%;
 	border: none;
 }
 
-embed {
+iframe {
+	display: block;
 	width: 100%;
+	border: none;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
