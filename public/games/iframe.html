@@ -9,7 +9,7 @@
 	<body>
 		<iframe id="iframe" src="select.html"></iframe>
 		<script>
-			updateGame = function(){document.getElementById("iframe").src = gamelist[location.hash.substr(1)];};
+			updateGame = function(){document.getElementById("iframe").src = gamelist[location.hash.substr(1)]; document.title = gamenames[location.hash.substr(1)]; };
 			if (location.hash.substr(1) != "") {
 				updateGame();
 			};
