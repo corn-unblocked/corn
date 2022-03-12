@@ -10,6 +10,7 @@ var gamelist = {
 	"repuls": "https://repuls.io",
 	"sans": "https://jcw87.github.io/c2-sans-fight/",
 	"smashkarts": "https://smashkarts.io",
+	"splix": "https://splix.io",
 };
 
 var gamenames = {
@@ -24,4 +25,5 @@ var gamenames = {
 	"repuls": "Repuls",
 	"sans": "Sans Bossfight",
 	"smashkarts": "Smash Karts",
+	"splix": "Splix",
 };
