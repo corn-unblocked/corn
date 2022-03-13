@@ -2,20 +2,28 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="/css/iframe.css" />
-		<link rel="icon" type="image/png" href="/img/cornicon.png" />
-		<title>Other site iframe</title>
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="icon" type="image/png" href="/img/cornicon.png">
+		<script src="/scripts/otherlist.js"></script>
+		<title>Corn iframes</title>
 	</head>
 	<body>
-		<iframe id="iframe" allow="fullscreen" src="select.html"></iframe>
+		<h1>Other popular game sites in iframes</h1>
+		<img class="mainimg" src="/img/corn.svg" alt="Corn Unblocked" class="center">
+		<p>If there's a game you can't find, look in here.</p>
+		<div id="otherlist"></div>
+		<a class="button" href="/index.html">Back</a>
+		<p class="bottom">Licensed under the <a href="license.txt">MIT License</a>. Image under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a>.</p>
 		<script>
-			sitelist = {
-							"ubg100": "https://ubg100.github.io/games.html",
-							"totallyscience": "https://actuallymath.com",
-						}
-			updateSite = function(){document.getElementById("iframe").src = sitelist[location.hash.substr(1)];};
-			updateSite();
-			window.addEventListener("hashchange", updateSite, false);
+			sites = Object.keys(gamelist);
+			for (i = 0; i < sites.length; i++) {
+				link = document.createElement("a");
+				link.className = "button";
+				link.innerHTML = gamenames[sites[i]];
+				link.href = "iframe.html#" + sites[i];
+				document.getElementById("otherlist").appendChild(link);
+			};
 		</script>
 	</body>
 </html>
+		
