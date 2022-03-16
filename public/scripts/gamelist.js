@@ -13,6 +13,8 @@ var gamelist = {
 	"splix": "https://splix.io",
 	"gats": "https://gats.io",
 	"tetris": "https://tetris.com/games-content/play-tetris-content/resources/project-tetriscom/game/game-29A05D0315C8FF3C/if_game_html5.php",
+	"moomoo": "https://moomoo.io",
+	"evoworld": "https://evoworld.io",
 };
 
 var gamenames = {
@@ -30,4 +32,6 @@ var gamenames = {
 	"splix": "Splix",
 	"gats": "Gats",
 	"tetris": "Tetris",
+	"moomoo": "MooMoo.io",
+	"evoworld": "Evo World",
 };
