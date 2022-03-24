@@ -52,6 +52,12 @@ p {
 	padding: 0 10%;
 }
 
+li {
+	text-align: center;
+	font-size: 20px;
+	margin: 1% auto;
+}
+
 p.bottom {
 	bottom: 50px;
 	font-size: 10px;
