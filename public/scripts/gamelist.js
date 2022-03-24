@@ -15,6 +15,7 @@ var gamelist = {
 	"tetris": "https://tetris.com/games-content/play-tetris-content/resources/project-tetriscom/game/game-29A05D0315C8FF3C/if_game_html5.php",
 	"moomoo": "https://moomoo.io",
 	"evoworld": "https://evoworld.io",
+	"jklm": "https://jklm.fun",
 };
 
 var gamenames = {
@@ -34,4 +35,5 @@ var gamenames = {
 	"tetris": "Tetris",
 	"moomoo": "MooMoo.io",
 	"evoworld": "Evo World",
+	"jklm": "BombParty",
 };
