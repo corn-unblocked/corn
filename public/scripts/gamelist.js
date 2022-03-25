@@ -16,6 +16,7 @@ var gamelist = {
 	"moomoo": "https://moomoo.io",
 	"evoworld": "https://evoworld.io",
 	"jklm": "https://jklm.fun",
+	"csonline": "https://play-cs.com",
 };
 
 var gamenames = {
@@ -36,4 +37,5 @@ var gamenames = {
 	"moomoo": "MooMoo.io",
 	"evoworld": "Evo World",
 	"jklm": "BombParty",
+	"csonline": "Counter-Strike",
 };
