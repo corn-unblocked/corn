@@ -17,6 +17,7 @@ var gamelist = {
 	"evoworld": "https://evoworld.io",
 	"jklm": "https://jklm.fun",
 	"csonline": "https://play-cs.com",
+	"tanuki": "https://hotcorn-gamecdn.web.app/tanuki/",
 };
 
 var gamenames = {
@@ -38,4 +39,5 @@ var gamenames = {
 	"evoworld": "Evo World",
 	"jklm": "BombParty",
 	"csonline": "Counter-Strike",
+	"tanuki": "Tanuki Sunset",
 };
