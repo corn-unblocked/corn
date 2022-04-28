@@ -2,7 +2,7 @@
 lastcommit="$(git log -1 --pretty=%B)"
 
 for file in $(find .); do
-	if [[ "$file" == *".html"* ]]; then
+	if [[ "$file" = "*.html*" ]]; then
 		sed -i -re 's/(((src)|(href))=\"\/)/\1corn\//g' $file
 		git add $file
 	fi
@@ -11,7 +11,7 @@ git commit -m "file fix for subtree"
 git subtree push --prefix public origin gh-pages
 
 for file in $(find .); do 
-	if [[ "$file" == *".html"* ]]; then
+	if [[ "$file" = "*.html*" ]]; then
 		sed -i -re 's/(((src)|(href))=\")\/corn/\1/g' $file
 		git add $file
 	fi
