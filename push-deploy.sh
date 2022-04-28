@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 lastcommit="$(git log -1 --pretty=%B)"
 
 for file in $(find .); do
