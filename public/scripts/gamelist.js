@@ -1,5 +1,5 @@
 var gamelist = {
-	"shell": "https://geometry.pw",
+	"shell": "https://mathactivity.xyz",
 	"1v1": "https://1v1.lol",
 	"merczone": "https://merc.zone",
 	"zombs": "https://zombsroyale.io",
