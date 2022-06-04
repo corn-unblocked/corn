@@ -6,8 +6,11 @@ body {
 	background-color: whitesmoke;
 }
 
-h1 {
+h1, h2, h3 {
 	text-align: center;
+}
+
+h1 {
 	margin-left: 50px;
 	margin-right: 50px;
 	margin-top: 50px;

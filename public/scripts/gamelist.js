@@ -41,3 +41,7 @@ var gamenames = {
 	"csonline": "Counter-Strike",
 	"tanuki": "Tanuki Sunset",
 };
+
+var gameinfo = {
+	"tetris": "Tetra Legends, slightly different"
+};

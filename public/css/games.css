@@ -14,7 +14,12 @@ div {
 	flex-direction: column;
 }
 
-div#sidebar {
+p#gameInfo {
+	line-height: 20px;
+	font-size: 15px;
+}
+
+div.sidebar {
 	width: 200px;
 }
 

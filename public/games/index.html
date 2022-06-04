@@ -12,17 +12,28 @@
 		<button id="closeButton">&#x2715;</button>
 		<h1>Games</h1>
 		<div id="mainDiv">
-			<div id="sidebar">
+			<div class="sidebar">
 				<button class="button" id="openFullscreen">Open game fullscreen</button>
 				<a class="button" href="/index.html">Back</a>
 				<div id="gamelist"></div>
 			</div>
 			<iframe allow="fullscreen" id="iframe" src="iframe.html"></iframe>
+			<div class="sidebar">
+				<h2 id="gameTitle">Select a Game</h2>
+				<p id="gameInfo"></p>
+				<button id="copyEmbed" class="button">Copy Embed Link</button>
+			</div>
 		</div>
 		<p class="bottom">Licensed under the <a href="../license.txt">MIT License</a>. Image under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a>.</p>
 		<script>
 			function switchGames(game) {
 				document.getElementById("iframe").src = "iframe.html#" + game;
+				document.getElementById("gameTitle").innerHTML = gamenames[game];
+				if (game in gameinfo) {
+					document.getElementById("gameInfo").innerHTML = gameinfo[game];
+				} else {
+					document.getElementById("gameInfo").innerHTML = "";
+				};
 			};
 			games = Object.keys(gamelist);
 			for (i = 0; i < games.length; i++) {
@@ -51,6 +62,10 @@
 				document.getElementById("iframe").style.removeProperty("position");
 			});
 			window.addEventListener("hashchange", switchGames(document.location.hash.substring(1)));
+			document.getElementById("copyEmbed").addEventListener("click", function() {
+				iframe = document.getElementById("iframe").src;
+				navigator.clipboard.writeText(iframe);
+			});
 		</script>
 	</body>
 </html>
