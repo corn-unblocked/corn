@@ -1,5 +1,12 @@
-head, body {
+html {
 	height: 100%;
+}
+
+body {
+	padding: 1%;
+	margin: 0px;
+	height: 100%;
+	box-sizing: border-box;
 }
 
 div {
@@ -7,8 +14,19 @@ div {
 	flex-direction: column;
 }
 
-#gamelist {
-	margin-top: 5%;
+div#sidebar {
+	width: 200px;
+}
+
+div#mainDiv {
+	display: flex;
+	height: 75%;
+	flex-direction: row;
+}
+
+div#gamelist {
+	flex-direction: column;
+	margin: 5%;
 	height: 100%;
 	overflow: auto;
 }
@@ -16,4 +34,28 @@ div {
 iframe {
 	flex: 75%;
 	margin: 1%;
+	border: 2px solid gray;
+	z-index: 98;
+	top: 0px;
+	left: 0px;
+}
+
+.button {
+	width: 100%;
+}
+
+button#closeButton {
+	display: none;
+	position: fixed;
+	left: 10px;
+	top: 10px;
+	font-size: 24px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.5);
+	width: 40px;
+	height: 40px;
+	z-index: 99;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
 }

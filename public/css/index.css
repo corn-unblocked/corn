@@ -15,7 +15,8 @@ h1 {
 }
 
 .button {
-	border-width: 0px;
+	box-sizing: border-box;
+	border: none;
 	margin: 10px auto;
 	width: 200px;
 	transition-duration: 0.5s;

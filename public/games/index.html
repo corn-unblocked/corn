@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height: 100%;">
+<html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/css/index.css">
@@ -8,11 +8,12 @@
 		<script src="/scripts/gamelist.js"></script>
 		<title>Corn Games</title>
 	</head>
-	<body style="height: 100%;">
+	<body>
+		<button id="closeButton">&#215;</button>
 		<h1>Games</h1>
-		<div style="height:75%; flex-direction: row;">
-			<div style="flex: 25%">
-				<a class="button" href="javascript:location.href = document.getElementById('iframe').src;">Open game fullscreen</a>
+		<div id="mainDiv">
+			<div id="sidebar">
+				<button class="button" id="openFullscreen">Open game fullscreen</button>
 				<a class="button" href="/index.html">Back</a>
 				<div id="gamelist"></div>
 			</div>
@@ -28,9 +29,28 @@
 				button = document.createElement("button");
 				button.className = "button";
 				button.innerHTML = gamenames[games[i]];
-				button.addEventListener("click", switchGames.bind(null, games[i]), false);
+				button.addEventListener("click", switchGames.bind(null, games[i]));
 				document.getElementById("gamelist").appendChild(button);
 			};
+			document.getElementById("openFullscreen").addEventListener("click", function() {
+				document.getElementById("closeButton").style.display = "block";
+				document.getElementsByTagName("body")[0].style.padding = "0px";
+				document.getElementById("iframe").style.margin = "0px";
+				document.getElementById("iframe").style.border = "0px solid gray";
+				document.getElementById("iframe").style.width = "100%";
+				document.getElementById("iframe").style.height = "100%";
+				document.getElementById("iframe").style.position = "fixed";
+			});
+			document.getElementById("closeButton").addEventListener("click", function() {
+				document.getElementById("closeButton").style.display = "none";
+				document.getElementsByTagName("body")[0].style.removeProperty("padding");
+				document.getElementById("iframe").style.removeProperty("border-width");
+				document.getElementById("iframe").style.removeProperty("margin");
+				document.getElementById("iframe").style.removeProperty("width");
+				document.getElementById("iframe").style.removeProperty("height");
+				document.getElementById("iframe").style.removeProperty("position");
+			});
+			window.addEventListener("hashchange", switchGames(document.location.hash.substring(1)));
 		</script>
 	</body>
 </html>
