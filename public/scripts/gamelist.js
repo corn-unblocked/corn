@@ -12,7 +12,7 @@ var gamelist = {
 	"smashkarts": "https://smashkarts.io",
 	"splix": "https://splix.io",
 	"gats": "https://gats.io",
-	"tetris": "https://tetris.com/games-content/play-tetris-content/resources/project-tetriscom/game/game-29A05D0315C8FF3C/if_game_html5.php",
+	"tetris": "https://tetralegends.app",
 	"moomoo": "https://moomoo.io",
 	"evoworld": "https://evoworld.io",
 	"jklm": "https://jklm.fun",
