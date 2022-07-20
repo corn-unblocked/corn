@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/corn-unblocked/corn/issues"
   },
-  "homepage": "https://github.com/corn-unblocked/corn#readme"
+  "homepage": "https://github.com/corn-unblocked/corn#readme",
+  "dependencies": {
+    "firebase": "^9.9.0"
+  }
 }
