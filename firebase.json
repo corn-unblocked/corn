@@ -6,13 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "headers": [ {
-          "source": "**/*",
-          "headers": [ {
-              "key": "X-Frame-Options",
-              "value": "SAMEORIGIN"
-      } ]
-	} ],
 	"predeploy": "./build.sh build",
 	"postdeploy": "./build.sh clean"
   }
