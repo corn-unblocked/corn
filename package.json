@@ -1,0 +1,24 @@
+{
+  "name": "corn",
+  "version": "1.0.0",
+  "description": "A website for unblocked games",
+  "main": "scripts/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corn-unblocked/corn.git"
+  },
+  "keywords": [
+    "unblocked",
+    "proxy",
+    "censorship"
+  ],
+  "author": "Vaughan Milliman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/corn-unblocked/corn/issues"
+  },
+  "homepage": "https://github.com/corn-unblocked/corn#readme"
+}
