@@ -12,6 +12,8 @@
               "key": "X-Frame-Options",
               "value": "SAMEORIGIN"
       } ]
-	} ]
+	} ],
+	"predeploy": "./build.sh build",
+	"postdeploy": "./build.sh clean"
   }
 }
