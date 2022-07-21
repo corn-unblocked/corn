@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="stylesheet" href="/css/games.css">
+		<link rel="icon" type="image/png" href="/img/cornicon.png">
+		<title>Theme editor</title>
+	</head>
+	<body>
+		<h1>Theme editor</h1>
+		<div id="mainDiv">
+			<textarea id="mainTheme" style="resize: none; width: 100%; margin-right: 1%;"></textarea>
+			<div class="sidebar">
+				<button class="button" onclick="loadDefault()">Load Default Theme</button>
+				<button class="button" onclick="loadCustom()">Load Custom Theme</button>
+				<button class="button" onclick="saveTheme()">Save Theme</button>
+				<button class="button" onclick="reloadTheme()">Reload Theme</button>
+				<a class="button" href="index.html">Back</a>
+			</div>
+		</div>
+		<p class="bottom">Licensed under the <a href="license.txt">MIT License</a>. Image under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a>.</p>
+		<script>
+			function loadDefault() {
+				let xhr = new XMLHttpRequest();
+				xhr.open("GET", "/css/index.css", true);
+				xhr.responseType = "text";
+
+				xhr.onload = function () {
+					if (xhr.readyState === xhr.DONE) {
+						document.getElementById("mainTheme").value = xhr.responseText;
+					}
+				};
+
+				xhr.send(null);
+			}
+			function loadCustom() {
+				if (window.localStorage.getItem("mainTheme") != null) {
+					document.getElementById("mainTheme").value = window.localStorage.getItem("mainTheme");
+				}
+			}
+			function saveTheme() {
+				window.localStorage.setItem("mainTheme", document.getElementById("mainTheme").value);
+			}
+			function reloadTheme() {
+				let body = document.getElementsByTagName("body")[0];
+				body.removeChild(document.getElementById("themeloader"));
+				let script = document.createElement("script");
+				script.id = "themeloader";
+				script.src = "/scripts/themeloader.js";
+				body.appendChild(script);
+			}
+		</script>
+		<script id="themeloader" src="/scripts/themeloader.js"></script>
+	</body>
+</html>
+		
