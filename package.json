@@ -2,9 +2,10 @@
   "name": "corn",
   "version": "1.0.0",
   "description": "A website for unblocked games",
-  "main": "scripts/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"build": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,9 @@
   "homepage": "https://github.com/corn-unblocked/corn#readme",
   "dependencies": {
     "firebase": "^9.9.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
   }
 }

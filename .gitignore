@@ -67,3 +67,7 @@ node_modules/
 
 # swap files
 *~
+
+# build dirs
+public/
+dist/
