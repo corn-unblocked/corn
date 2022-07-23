@@ -29,7 +29,7 @@
 		<script>
 			function switchGames(game) {
 				document.getElementById("iframe").src = "iframe.html#" + game;
-				document.getElementById("gameTitle").innerHTML = getGameName(game);
+				document.getElementById("gameTitle").innerHTML = getGameTitle(game);
 				if (getGameInfo(game) != null) {
 					document.getElementById("gameInfo").innerHTML = getGameInfo(game);
 				} else {
