@@ -25,22 +25,23 @@
 			</div>
 		</div>
 		<footer>Licensed under the <a href="../license.txt">MIT License</a>. Image under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a>.</footer>
+		<script src="/scripts/gameinfo.js"></script>
 		<script>
 			function switchGames(game) {
 				document.getElementById("iframe").src = "iframe.html#" + game;
-				document.getElementById("gameTitle").innerHTML = gamenames[game];
-				if (game in gameinfo) {
-					document.getElementById("gameInfo").innerHTML = gameinfo[game];
+				document.getElementById("gameTitle").innerHTML = getGameName(game);
+				if (getGameInfo(game) != null) {
+					document.getElementById("gameInfo").innerHTML = getGameInfo(game);
 				} else {
 					document.getElementById("gameInfo").innerHTML = "";
 				};
 			};
-			games = Object.keys(gamelist);
-			for (i = 0; i < games.length; i++) {
+			games = listGames();
+			for (i of games) {
 				button = document.createElement("button");
 				button.className = "button";
-				button.innerHTML = gamenames[games[i]];
-				button.addEventListener("click", switchGames.bind(null, games[i]));
+				button.innerHTML = getGameTitle(i);
+				button.addEventListener("click", switchGames.bind(null, i));
 				document.getElementById("gamelist").appendChild(button);
 			};
 			document.getElementById("openFullscreen").addEventListener("click", function() {

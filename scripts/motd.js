@@ -6,7 +6,18 @@ var motds = [
     "Try our new theme feature!",
     "Ademay ybay Aughanvay Illimanmay",
     "Try to actually win this time",
-    "Life is long, games are forever",
-    "ily ay",
-    "Cry about it"
+    "Life is long, gaming is forever",
+    "anvitha...",
+    "Cry about it",
+    "Math is boring",
+    "Go home nerd",
+    "Does anyone even look at these?",
+    "Did you know you can add a custom game?",
+    "Inspectlet is cool too",
+    "Apple Unblocked also exists",
+    "crushes suck ngl",
+    "Hot Corn Proxy - Now even less GeForce Now compatible!",
+    "Select a game... now please",
+    "Insert message here",
+    "The teacher is probably saying something important right now"
 ];

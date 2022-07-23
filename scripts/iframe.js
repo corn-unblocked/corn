@@ -1,6 +1,9 @@
+// requires gameinfo.js to be imported
+
 function updateGame() {
-	document.getElementById("iframe").src = gamelist[location.hash.substr(1)];
-	document.title = gamenames[location.hash.substr(1)];
+	let game = location.hash.substr(1);
+	document.getElementById("iframe").src = getGameUrl(game);
+	document.title = getGameTitle(game);
 };
 
 if (location.hash.substr(1) != "") {

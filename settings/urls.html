@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="stylesheet" href="/css/games.css">
+		<link rel="icon" type="image/png" href="/img/cornicon.png">
+		<title>Corn URL editor</title>
+	</head>
+	<body>
+		<div id="mainDiv">
+			<div style="display: flex; flex-direction: column; margin: auto;" id="urlList"></div>
+			<div class="sidebar">
+				<input id="gameId" placeholder="Put a unique ID here">
+				<input id="gameUrl" placeholder="Put a game URL here">
+				<input id="gameName" placeholder="Put a game name here">
+				<input id="gameInfo" placeholder="Put some info about the game here, if you want">
+				<button class="button" onclick="addCustom()" title="Needs ID, URL, and name">Add your game</button>
+				<a class="button" href="index.html">Back</a>
+			</div>
+		</div>
+		<footer>Licensed under the <a href="license.txt">MIT License</a>. Image under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a>.</footer>
+		<script src="/scripts/gameinfo.js"></script>
+		<script>
+			function readCustomGames() {
+				let ret = [];
+				for (let i = 0; window.localStorage.getItem("game:" + i) != null; i++) {
+					ret.append(window.localStorage.getItem("game:" + i);
+				}
+				return ret;
+			}
+			let customGameList = readCustomGames();
+			function writeCustomGameList(gameList) {
+				for (let i = 0; window.localStorage.getItem("game:" + i) != null; i++) {
+					let game = window.localStorage.getItem("game:" + i);
+					window.localStorage.removeItem("game:" + i);
+					window.localStorage.removeItem(i + ":url");
+					window.localStorage.removeItem(i + ":name");
+					window.localStorage.removeItem(i + ":info");
+				}
+				for (let i = 0; i < gameList.length; i++) {
+					window.localStorage.setItem("game:" + i, gameList[i]);
+				}
+			}
+			function addCustom() {
+				customGameList = readCustomGames();
+			}
+		</script>
+		<script src="/scripts/themeloader.js"></script>
+	</body>
+</html>
