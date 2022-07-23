@@ -7,6 +7,6 @@ var motds = [
     "Ademay ybay Aughanvay Illimanmay",
     "Try to actually win this time",
     "Life is long, games are forever",
-    "ily anvitha",
+    "ily ay",
     "Cry about it"
 ];
