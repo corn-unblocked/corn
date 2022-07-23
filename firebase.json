@@ -6,7 +6,7 @@
       "**/.*",
       "**/node_modules/**"
     ],
-	"predeploy": "./build.sh build",
-	"postdeploy": "./build.sh clean"
+    "predeploy": "./build.sh build",
+    "postdeploy": "./build.sh clean"
   }
 }
