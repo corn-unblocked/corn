@@ -12,7 +12,7 @@ function listGames() {
 
 function getGameUrl(game) {
     let games = listGames();
-    if (!(games.some(e => e.Name === game))) { return null };
+    if (!(games.some(e => e == game))) { return null };
     let ret = window.localStorage.getItem(game + ":url");
 	if (ret === null) {
         ret = gamelist[game];
@@ -22,7 +22,7 @@ function getGameUrl(game) {
 
 function getGameTitle(game) {
     let games = listGames();
-    if (!(games.some(e => e.Name === game))) { return null };
+    if (!(games.some(e => e == game))) { return null };
     let ret = window.localStorage.getItem(game + ":title");
 	if (ret === null) {
         ret = gamenames[game];
@@ -32,7 +32,7 @@ function getGameTitle(game) {
 
 function getGameInfo(game) {
     let games = listGames();
-    if (!(games.some(e => e.Name === game))) { return null };
+    if (!(games.some(e => e == game))) { return null };
     let ret = window.localStorage.getItem(game + ":info");
 	if (ret === null) {
         ret = gameinfo[game];
