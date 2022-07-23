@@ -13,7 +13,7 @@
 			<div class="sidebar">
 				<input id="gameId" placeholder="Put a unique ID here">
 				<input id="gameUrl" placeholder="Put a game URL here">
-				<input id="gameName" placeholder="Put a game name here">
+				<input id="gameTitle" placeholder="Put a game name here">
 				<input id="gameInfo" placeholder="Put some info about the game here, if you want">
 				<button class="button" onclick="addCustom()" title="Needs ID, URL, and name">Add your game</button>
 				<a class="button" href="index.html">Back</a>
@@ -29,21 +29,53 @@
 				}
 				return ret;
 			}
-			let customGameList = readCustomGames();
-			function writeCustomGameList(gameList) {
-				for (let i = 0; window.localStorage.getItem("game:" + i) != null; i++) {
-					let game = window.localStorage.getItem("game:" + i);
-					window.localStorage.removeItem("game:" + i);
-					window.localStorage.removeItem(i + ":url");
-					window.localStorage.removeItem(i + ":name");
-					window.localStorage.removeItem(i + ":info");
+			function readCustomData(gameList, data) {
+				let ret = [];
+				for (game of gameList) {
+					ret.push(window.localStorage.getItem(game + ":" + data));
+				}
+				return ret;
+			}
+			let customGameList = [];
+			let customGameUrls = [];
+			let customGameTitles = [];
+			let customGameInfo = [];
+			function readAllData() {
+				customGameList = readCustomGames();
+				customGameUrls = readCustomData(customGameList, "url");
+				customGameTitles = readCustomData(customGameList, "title");
+				customGameInfo = readCustomData(customGameList, "info");
+			}
+			readAllData();
+			function writeAllData() {
+				let storage = window.localStorage;
+				for (let i = 0; storage.getItem("game:" + i) != null; i++) {
+					let game = storage.getItem("game:" + i);
+					storage.removeItem("game:" + i);
+					storage.removeItem(i + ":url");
+					storage.removeItem(i + ":title");
+					storage.removeItem(i + ":info");
 				}
 				for (let i = 0; i < gameList.length; i++) {
-					window.localStorage.setItem("game:" + i, gameList[i]);
+					storage.setItem("game:" + i, customGameList[i]);
+					storage.setItem(customGameList[i] + ":url", customUrlList[i]);
+					storage.setItem(customGameList[i] + ":title", customTitleList[i]);
+					storage.setItem(customGameList[i] + ":info", customInfoList[i]);
 				}
 			}
 			function addCustom() {
-				customGameList = readCustomGames();
+				customGameList.push(document.getElementById("gameId").value);
+				customUrlList.push(document.getElementById("gameUrl").value);
+				customTitleList.push(document.getElementById("gameTitle").value);
+				customInfoList.push(document.getElementById("gameInfo").value);
+				writeAllData();
+			}
+			function removeCustom(index) {
+				customGameList.splice(index, 1);
+				customUrlList.splice(index, 1);
+				customTitleList.splice(index, 1);
+				customInfoList.splice(index, 1);
+				writeAllData();
 			}
 		</script>
 		<script src="/scripts/themeloader.js"></script>
