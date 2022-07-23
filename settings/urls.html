@@ -25,7 +25,7 @@
 			function readCustomGames() {
 				let ret = [];
 				for (let i = 0; window.localStorage.getItem("game:" + i) != null; i++) {
-					ret.append(window.localStorage.getItem("game:" + i);
+					ret.push(window.localStorage.getItem("game:" + i));
 				}
 				return ret;
 			}

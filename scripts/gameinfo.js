@@ -2,10 +2,10 @@ function listGames() {
     let storage = window.localStorage;
 	let games = [];
     for (let i = 0; storage.getItem("game:" + i) != null; i++) {
-        games.append(storage.getItem("game:" + i));
+        games.push(storage.getItem("game:" + i));
     }
     for (key of Object.keys(gamelist)) {
-       games.append(key);
+       games.push(key);
     }
     return games;
 }
