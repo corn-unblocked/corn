@@ -2,8 +2,14 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/css/index.css">
 	</head>
 	<body>
-		<h1>Select a game!</h1>
+		<img class="mainimg" src="/img/corn.svg" alt="Corn Unblocked" class="center">
+		<h1 class="center" id="header">Select a game!</h1>
+		<script src="/scripts/motd.js"></script>
+		<script>
+			document.getElementById("header").innerHTML = motds[Math.floor(Math.random()*motds.length)];
+		</script>
 	</body>
 </html>
