@@ -16,3 +16,12 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+
+export default function signIn() {
+	signInWithPopup(auth, provider).then((result) => {
+		console.log(result.user);
+	}).catch((error) => {
+		console.log("Couldn't sign you in!");
+		console.log("Error - " + error.message);
+	});
+}
