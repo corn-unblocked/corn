@@ -11,7 +11,7 @@ case $1 in
 		mkdir public
 		mkdir dist
 		npm run build
-		for file in "404.html about css devtools games img index.html license.txt other pr0xy scripts"; do
+		for file in "404.html about css devtools games img index.html license.txt other pr0xy scripts settings"; do
 			cp -r $file public/
 		done
 		mv dist/bundle.js public/scripts/

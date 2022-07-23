@@ -2,11 +2,34 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="/css/iframe.css" />
-		<link rel="icon" type="image/png" href="/img/cornicon.png" />
-		<title>Corn Ultraviolet</title>
+		<link rel="stylesheet" href="/css/iframe.css">
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="icon" type="image/png" href="/img/cornicon.png">
+		<title>Corn new pr0xy test</title>
 	</head>
 	<body>
-		<iframe src="https://hotcorn-ultraviolet.herokuapp.com" allow="fullscreen"></iframe>
+		<div class="center">
+			<div class="center-block">
+				<a class="button inline" href="/index.html">Back</a>
+				<a class="button inline" href="/license.txt">License</a>
+			</div>
+			<div class="center-block">
+				<input type="text" id="text" />
+				<button class="button inline" onclick="enter()">Enter</button>
+			</div>
+		</div>
+		<iframe id="iframe" src=""></iframe>
+		<script>
+			let proxy = "https://hotcorn-pr0xy.herokuapp.com";
+			function enter() {
+                let input = document.getElementById("text");
+                let iframe = document.getElementById("iframe");
+				iframe.src = proxy
+            	.contentWindow.postMessage("topUrl:" + window.location.origin, "*");
+                iframe.contentWindow.postMessage("input:" + input.value, "*");
+			}
+			document.getElementById("text").addEventListener("keydown", function (e) { if (e.code === "Enter") { enter(); } });
+		</script>
+		<script src="/scripts/themeloader.js"></script>
 	</body>
 </html>
