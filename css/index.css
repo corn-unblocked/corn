@@ -65,7 +65,7 @@ li {
 	list-style-position: inside;
 }
 
-p.bottom {
+footer {
 	bottom: 50px;
 	font-size: 10px;
 	margin-left: auto;
