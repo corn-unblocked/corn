@@ -67,12 +67,10 @@ li {
 
 footer {
 	text-align: center;
-	line-height: 40px;
 	font-size: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	position: absolute;
-	bottom: 1%;
+	margin-top: 5%;
 	width: 100%;
 }
 
