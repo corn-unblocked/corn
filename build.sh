@@ -10,6 +10,7 @@ case $1 in
 	"build")
 		mkdir public
 		mkdir dist
+		npm install
 		npm run build
 		for file in "404.html about css devtools games img index.html license.txt other pr0xy scripts settings"; do
 			cp -r $file public/
