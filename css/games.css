@@ -3,7 +3,6 @@ html {
 }
 
 body {
-	padding: 1%;
 	margin: 0px;
 	height: 100%;
 	box-sizing: border-box;
@@ -20,7 +19,8 @@ p#gameInfo {
 }
 
 div.sidebar {
-	width: 200px;
+	margin: 0% 1%;
+	width: 240px;
 }
 
 div#mainDiv {
