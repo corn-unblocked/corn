@@ -40,9 +40,9 @@
 				return ret;
 			}
 			let customGameList = [];
-			let customGameUrls = [];
-			let customGameTitles = [];
-			let customGameInfo = [];
+			let customUrlList = [];
+			let customTitleList = [];
+			let customInfoList = [];
 			function showGames() {
 				let urlList = document.getElementById("urlList");
 				while (urlList.firstChild) {urlList.removeChild(urlList.firstChild);}
@@ -56,9 +56,9 @@
 			}
 			function readAllData() {
 				customGameList = readCustomGames();
-				customGameUrls = readCustomData(customGameList, "url");
-				customGameTitles = readCustomData(customGameList, "title");
-				customGameInfo = readCustomData(customGameList, "info");
+				customUrlList = readCustomData(customGameList, "url");
+				customTitleList = readCustomData(customGameList, "title");
+				customInfoList = readCustomData(customGameList, "info");
 				showGames();
 			}
 			readAllData();
