@@ -75,9 +75,9 @@
 				for (let i = 0; storage.getItem("game:" + i) != null; i++) {
 					let game = storage.getItem("game:" + i);
 					storage.removeItem("game:" + i);
-					storage.removeItem(i + ":url");
-					storage.removeItem(i + ":title");
-					storage.removeItem(i + ":info");
+					storage.removeItem(game + ":url");
+					storage.removeItem(game + ":title");
+					storage.removeItem(game + ":info");
 				}
 				for (let i = 0; i < customGameList.length; i++) {
 					storage.setItem("game:" + i, customGameList[i]);
