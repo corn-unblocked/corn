@@ -71,7 +71,7 @@
 					storage.removeItem(i + ":title");
 					storage.removeItem(i + ":info");
 				}
-				for (let i = 0; i < gameList.length; i++) {
+				for (let i = 0; i < customGameList.length; i++) {
 					storage.setItem("game:" + i, customGameList[i]);
 					storage.setItem(customGameList[i] + ":url", customUrlList[i]);
 					storage.setItem(customGameList[i] + ":title", customTitleList[i]);
