@@ -28,8 +28,8 @@
 			function enter() {
                 let input = document.getElementById("text");
                 let iframe = document.getElementById("iframe");
-				iframe.src = proxy
-            	.contentWindow.postMessage("topUrl:" + window.location.origin, "*");
+				iframe.src = proxy;
+            	iframe.contentWindow.postMessage("topUrl:" + window.location.origin, "*");
                 iframe.contentWindow.postMessage("input:" + input.value, "*");
 			}
 			document.getElementById("text").addEventListener("keydown", function (e) { if (e.code === "Enter") { enter(); } });
