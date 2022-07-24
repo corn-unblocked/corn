@@ -9,7 +9,10 @@
 	</head>
 	<body>
 		<div id="mainDiv">
-			<div style="display: flex; flex-direction: column; margin: auto;" id="urlList"></div>
+			<div style="margin: auto;">
+				<div class="sidebar" id="urlList">
+				</div>
+			</div>
 			<div class="sidebar">
 				<input id="gameId" placeholder="Put a unique ID here">
 				<input id="gameUrl" placeholder="Put a game URL here">
@@ -40,11 +43,24 @@
 			let customGameUrls = [];
 			let customGameTitles = [];
 			let customGameInfo = [];
+			function showGames() {
+				let urlList = document.getElementById("urlList");
+				while (urlList.firstChild) {urlList.removeChild(urlList.firstChild);}
+				for (i = 0; i < customGameList.length; i++) {
+					button = document.createElement("button");
+					button.className = "button";
+					button.innerHTML = customGameList[i];
+					button.addEventListener("click", switchGames.bind(null, i));
+					urlList.appendChild(button);
+				}
+			}
+			}
 			function readAllData() {
 				customGameList = readCustomGames();
 				customGameUrls = readCustomData(customGameList, "url");
 				customGameTitles = readCustomData(customGameList, "title");
 				customGameInfo = readCustomData(customGameList, "info");
+				showGames();
 			}
 			readAllData();
 			function writeAllData() {
