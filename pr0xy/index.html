@@ -20,7 +20,11 @@
 		</div>
 		<iframe id="iframe" src="/other/select.html"></iframe>
 		<script>
-			let proxy = "https://hotcorn-pr0xy.herokuapp.com";
+			var gamelist = { "proxy": "https://hotcorn-pr0xy.herokuapp.com" };
+		</script>
+		<script src="/scripts/gameinfo.js"></script>
+		<script>
+			let proxy = getGameUrl("proxy");
 			function enter() {
                 let input = document.getElementById("text");
                 let iframe = document.getElementById("iframe");
