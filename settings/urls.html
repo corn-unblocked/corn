@@ -10,7 +10,8 @@
 	<body>
 		<div id="mainDiv">
 			<div style="margin: auto;">
-				<div class="sidebar" id="urlList">
+				<div class="sidebar">
+					<div id="gamelist"></div>
 				</div>
 			</div>
 			<div class="sidebar">
@@ -51,14 +52,14 @@
 				writeAllData();
 			}
 			function showGames() {
-				let urlList = document.getElementById("urlList");
-				while (urlList.firstChild) {urlList.removeChild(urlList.firstChild);}
+				let gameList = document.getElementById("gameList");
+				while (gameList.firstChild) {gameList.removeChild(gameList.firstChild);}
 				for (i = 0; i < customGameList.length; i++) {
 					button = document.createElement("button");
 					button.className = "button";
 					button.innerHTML = customGameList[i];
 					button.addEventListener("click", removeCustom.bind(null, i));
-					urlList.appendChild(button);
+					gameList.appendChild(button);
 				}
 			}
 			function readAllData() {
