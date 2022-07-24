@@ -43,6 +43,13 @@
 			let customUrlList = [];
 			let customTitleList = [];
 			let customInfoList = [];
+			function removeCustom(index) {
+				customGameList.splice(index, 1);
+				customUrlList.splice(index, 1);
+				customTitleList.splice(index, 1);
+				customInfoList.splice(index, 1);
+				writeAllData();
+			}
 			function showGames() {
 				let urlList = document.getElementById("urlList");
 				while (urlList.firstChild) {urlList.removeChild(urlList.firstChild);}
@@ -50,7 +57,7 @@
 					button = document.createElement("button");
 					button.className = "button";
 					button.innerHTML = customGameList[i];
-					button.addEventListener("click", switchGames.bind(null, i));
+					button.addEventListener("click", removeCustom.bind(null, i));
 					urlList.appendChild(button);
 				}
 			}
@@ -83,13 +90,6 @@
 				customUrlList.push(document.getElementById("gameUrl").value);
 				customTitleList.push(document.getElementById("gameTitle").value);
 				customInfoList.push(document.getElementById("gameInfo").value);
-				writeAllData();
-			}
-			function removeCustom(index) {
-				customGameList.splice(index, 1);
-				customUrlList.splice(index, 1);
-				customTitleList.splice(index, 1);
-				customInfoList.splice(index, 1);
 				writeAllData();
 			}
 		</script>
