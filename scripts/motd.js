@@ -7,7 +7,6 @@ var motds = [
     "Ademay ybay Aughanvay Illimanmay",
     "Try to actually win this time",
     "Life is long, gaming is forever",
-    "Dedicated to Anvitha",
     "Cry about it",
     "Math is boring",
     "Go home nerd",
