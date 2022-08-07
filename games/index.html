@@ -9,11 +9,11 @@
 		<title>Corn Games</title>
 	</head>
 	<body>
-		<button id="closeButton">&#x2715;</button>
+		<button id="closeButton" onclick="closeFullscreen()">&#x2715;</button>
 		<h1>Games</h1>
 		<div id="mainDiv">
 			<div class="sidebar">
-				<button class="button" id="openFullscreen">Open game fullscreen</button>
+				<button class="button" onclick="openFullscreen()">Open game fullscreen</button>
 				<a class="button" href="/index.html">Back</a>
 				<div id="gamelist"></div>
 			</div>
@@ -30,6 +30,9 @@
 		<script>
 			function switchGames(game) {
 				if (getGameUrl(game) == null || getGameUrl(game).length == 0) {
+					document.getElementById("gameSidebar").style.display = "none";
+					document.getElementById("iframe").src = "iframe.html#null";
+				} else {
 					document.getElementById("gameSidebar").style.display = "flex";
 					document.getElementById("iframe").src = "iframe.html#" + game;
 					document.getElementById("gameTitle").innerHTML = getGameTitle(game);
@@ -38,11 +41,8 @@
 					} else {
 						document.getElementById("gameInfo").innerHTML = "";
 					};
-				} else {
-					document.getElementById("gameSidebar").style.display = "none";
-					document.getElementById("iframe").src = "iframe.html#null";
 				}
-			};
+			}
 			games = listGames();
 			for (i of games) {
 				button = document.createElement("button");
@@ -50,8 +50,8 @@
 				button.innerHTML = getGameTitle(i);
 				button.addEventListener("click", switchGames.bind(null, i));
 				document.getElementById("gamelist").appendChild(button);
-			};
-			document.getElementById("openFullscreen").addEventListener("click", function() {
+			}
+			function openFullscreen() {
 				document.getElementById("closeButton").style.display = "block";
 				document.getElementsByTagName("body")[0].style.padding = "0px";
 				document.getElementById("iframe").style.margin = "0px";
@@ -59,8 +59,8 @@
 				document.getElementById("iframe").style.width = "100%";
 				document.getElementById("iframe").style.height = "100%";
 				document.getElementById("iframe").style.position = "fixed";
-			});
-			document.getElementById("closeButton").addEventListener("click", function() {
+			}
+			function closeFullscreen() {
 				document.getElementById("closeButton").style.display = "none";
 				document.getElementsByTagName("body")[0].style.removeProperty("padding");
 				document.getElementById("iframe").style.removeProperty("border-width");
@@ -68,7 +68,7 @@
 				document.getElementById("iframe").style.removeProperty("width");
 				document.getElementById("iframe").style.removeProperty("height");
 				document.getElementById("iframe").style.removeProperty("position");
-			});
+			}
 			window.addEventListener("hashchange", switchGames(document.location.hash.substring(1)));
 			function copyEmbed() {
 				let iframe = document.getElementById("iframe").src;
