@@ -15,6 +15,7 @@
 			<div class="sidebar">
 				<button class="button" onclick="openFullscreen()">Open game fullscreen</button>
 				<a class="button" href="/index.html">Back</a>
+				<input type="search" placeholder="Search for a game" id="searchGames" oninput="updateGames()">
 				<div id="gamelist"></div>
 			</div>
 			<iframe allow="fullscreen" id="iframe" src="iframe.html"></iframe>
@@ -43,14 +44,33 @@
 					};
 				}
 			}
-			games = listGames();
-			for (i of games) {
-				button = document.createElement("button");
-				button.className = "button";
-				button.innerHTML = getGameTitle(i);
-				button.addEventListener("click", switchGames.bind(null, i));
-				document.getElementById("gamelist").appendChild(button);
+			function updateGames() {
+				let unfilteredGames = listGames();
+				let search = document.getElementById("searchGames").value;
+				let games = [];
+				if (search.length != 0) {
+					for (game of unfilteredGames) {
+						let gametitle = getGameTitle(game);
+						if (gametitle.toLowerCase().includes(search.toLowerCase())) {
+							games.push(game);
+						}
+					}
+				} else {
+					games = unfilteredGames;
+				}
+				let gamelist = document.getElementById("gamelist");
+				while (gamelist.firstChild) {
+					gamelist.removeChild(gamelist.firstChild);
+				}
+				for (game of games) {
+					button = document.createElement("button");
+					button.className = "button";
+					button.innerHTML = getGameTitle(game);
+					button.addEventListener("click", switchGames.bind(null, game));
+					gamelist.appendChild(button);
+				}
 			}
+			updateGames("");
 			function openFullscreen() {
 				document.getElementById("closeButton").style.display = "block";
 				document.getElementsByTagName("body")[0].style.padding = "0px";

@@ -43,7 +43,7 @@ iframe {
 	left: 0px;
 }
 
-.button {
+.button, input {
 	width: 100%;
 }
 

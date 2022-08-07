@@ -107,3 +107,15 @@ footer {
 	padding: 20px;
 	width: 80%;
 }
+
+input[type=text], input[type=search] {
+	margin: 10px auto;
+	font-size: 16px;
+	border: 1px solid dimgrey;
+	outline: 2px solid transparent;
+	transition-duration: 0.5s;
+}
+
+input[type=text]:focus, input[type=search]:focus {
+	outline-color: #eff21b;
+}
