@@ -20,6 +20,12 @@ var gamelist = {
 	"tanuki": "https://hotcorn-gamecdn.web.app/tanuki/",
 	"ubg100": "https://ubg100.github.io/games.html",
 	"totallyscience": "https://actuallymath.com",
+	"littlealchemy": "https://littlealchemy.com",
+	"emulator": "https://emulatorgames.online/games",
+	"linerider": "https://linerider.com",
+	"powerline": "https://powerline.io",
+	"chromedino": "https://chromedino.com",
+	"doodles": "https://www.google.com/doodles",
 };
 
 var gamenames = {
@@ -39,15 +45,23 @@ var gamenames = {
 	"tetris": "Tetris",
 	"moomoo": "MooMoo.io",
 	"evoworld": "Evo World",
-	"jklm": "BombParty",
+	"jklm": "BombParty and PopSauce",
 	"csonline": "Counter-Strike",
 	"tanuki": "Tanuki Sunset",
 	"ubg100": "UBG100",
 	"totallyscience": "Totally Science",
+	"littlealchemy": "Little Alchemy",
+	"emulator": "Emulator Games Online",
+	"linerider": "Line Rider",
+	"powerline": "Powerline",
+	"chromedino": "Dinosaur Game",
+	"doodles": "Google Doodles",
 };
 
 var gameinfo = {
 	"tetris": "Tetra Legends, slightly different",
 	"ubg100": "Game site featuring additional games",
 	"totallyscience": "Game site featuring additional games and chat",
+	"emulator": "Old games for emulation",
+	"doodles": "All Google Doodles",
 };

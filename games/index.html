@@ -18,23 +18,30 @@
 				<div id="gamelist"></div>
 			</div>
 			<iframe allow="fullscreen" id="iframe" src="iframe.html"></iframe>
-			<div class="sidebar">
+			<div class="sidebar" id="gameSidebar" style="display: hidden;">
 				<h2 id="gameTitle">Select a Game</h2>
 				<p id="gameInfo"></p>
-				<button id="copyEmbed" class="button">Copy Embed Link</button>
+				<button class="button" onclick="copyEmbed()">Copy Embed Link (if not custom)</button>
+				<button class="button" onclick="copySrc()">Copy Source Link</button>
 			</div>
 		</div>
 		<footer>Licensed under the <a href="../license.txt">MIT License</a>. Image under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a>.</footer>
 		<script src="/scripts/gameinfo.js"></script>
 		<script>
 			function switchGames(game) {
-				document.getElementById("iframe").src = "iframe.html#" + game;
-				document.getElementById("gameTitle").innerHTML = getGameTitle(game);
-				if (getGameInfo(game) != null) {
-					document.getElementById("gameInfo").innerHTML = getGameInfo(game);
+				if (getGameUrl(game).length == 0) {
+					document.getElementById("gameSidebar").style.display = "flex";
+					document.getElementById("iframe").src = "iframe.html#" + game;
+					document.getElementById("gameTitle").innerHTML = getGameTitle(game);
+					if (getGameInfo(game) != null) {
+						document.getElementById("gameInfo").innerHTML = getGameInfo(game);
+					} else {
+						document.getElementById("gameInfo").innerHTML = "";
+					};
 				} else {
-					document.getElementById("gameInfo").innerHTML = "";
-				};
+					document.getElementById("gameSidebar").style.display = "none";
+					document.getElementById("iframe").src = "iframe.html#null";
+				}
 			};
 			games = listGames();
 			for (i of games) {
@@ -63,10 +70,15 @@
 				document.getElementById("iframe").style.removeProperty("position");
 			});
 			window.addEventListener("hashchange", switchGames(document.location.hash.substring(1)));
-			document.getElementById("copyEmbed").addEventListener("click", function() {
-				iframe = document.getElementById("iframe").src;
+			function copyEmbed() {
+				let iframe = document.getElementById("iframe").src;
 				navigator.clipboard.writeText(iframe);
-			});
+			}
+			function copySrc() {
+				let game = document.getElementById("iframe").src;
+				game = game.substring(game.indexOf('#') + 1);
+				navigator.clipboard.writeText(getGameUrl(game));
+			}
 		</script>
 		<script src="/scripts/themeloader.js"></script>
 	</body>

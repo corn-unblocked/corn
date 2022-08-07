@@ -12,7 +12,7 @@ case $1 in
 		npm install
 		npm run build
 		for file in "404.html about css devtools games img index.html license.txt node_modules other pr0xy scripts settings"; do
-			cp -r $file public/
+			cp -rf $file public/
 		done
 		;;
 	"clean")

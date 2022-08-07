@@ -24,13 +24,11 @@ div.sidebar {
 }
 
 div#mainDiv {
-	display: flex;
 	height: 75%;
 	flex-direction: row;
 }
 
 div#gamelist {
-	flex-direction: column;
 	margin: 5%;
 	height: 100%;
 	overflow: auto;
