@@ -65,7 +65,7 @@
 					button.className = "button";
 					button.innerHTML = id;
 					let title = "gameUrl: " + getGameUrl(id) + "\ngameTitle: " + getGameTitle(id);
-					title = title + "\ngameInfo: " + getGameInfo(id) + "\ngameTags" + getGameTags(id);
+					title = title + "\ngameInfo: " + getGameInfo(id) + "\ngameTags: " + getGameTags(id);
 					button.title = title;
 					button.addEventListener("click", removeCustom.bind(null, i));
 					gameList.appendChild(button);
