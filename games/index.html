@@ -22,6 +22,7 @@
 			<div class="sidebar" id="gameSidebar" style="display: hidden;">
 				<h2 id="gameTitle">Select a Game</h2>
 				<p id="gameInfo"></p>
+				<p id="gameTags"></p>
 				<button class="button" onclick="copyEmbed()">Copy Embed Link (if not custom)</button>
 				<button class="button" onclick="copySrc()">Copy Source Link</button>
 			</div>
@@ -38,15 +39,23 @@
 					document.getElementById("iframe").src = "iframe.html#" + game;
 					document.getElementById("gameTitle").innerHTML = getGameTitle(game);
 					if (getGameInfo(game) != null) {
+						document.getElementById("gameInfo").style.removeProperty("display");
 						document.getElementById("gameInfo").innerHTML = getGameInfo(game);
 					} else {
-						document.getElementById("gameInfo").innerHTML = "";
-					};
+						document.getElementById("gameInfo").style.display = "none";
+					}
+					if (getGameTags(game) != null) {
+						document.getElementById("gameInfo").style.removeProperty("display");
+						document.getElementById("gameTags").innerHTML = "Tags - " + getGameTags(game).join(' ');
+					} else {
+						document.getElementById("gameInfo").style.display = "none";
+					}
 				}
 			}
 			function updateGames() {
 				let unfilteredGames = listGames();
 				let search = document.getElementById("searchGames").value;
+				let searchTags = search.split(' ');
 				let games = [];
 				if (search.length != 0) {
 					for (game of unfilteredGames) { // filter by name
@@ -56,7 +65,23 @@
 						}
 					}
 					for (game of unfilteredGames) { // filter by tag
-						let gametitle = get
+						let gametags = getGameTags(game);
+						let tmpbreak = false;
+						// loving that polynomial time
+						for (tag of gameTags) {
+							for (searchTag of searchTags) {
+								if (tag.toLowercase().includes(searchTag.toLowerCase())) {
+									games.push(game);
+									tmpbreak = true;
+								}
+								if (tmpbreak) {
+									break;
+								}
+							}
+							if (tmpbreak) {
+								break;
+							}
+						}
 					}
 				} else {
 					games = unfilteredGames;
