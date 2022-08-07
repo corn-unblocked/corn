@@ -79,8 +79,10 @@
 				storage.setItem(id + ":title", document.getElementById("gameTitle").value);
 				storage.setItem(id + ":info", document.getElementById("gameInfo").value);
 				storage.setItem(id + ":tags", document.getElementById("gameTags").value);
-				customGameList.push(id);
-				writeCustomGames();
+				if (!customGameList.includes(id)) {
+					customGameList.push(id);
+					writeCustomGames();
+				}
 				showGames();
 			}
 		</script>

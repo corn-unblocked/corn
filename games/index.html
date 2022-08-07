@@ -68,6 +68,9 @@
 						let gametags = getGameTags(game);
 						let tmpbreak = false;
 						// loving that polynomial time
+						if (games.includes(game)) {
+							break;
+						}
 						for (tag of gametags) {
 							for (searchtag of searchtags) {
 								if (tag.toLowerCase().includes(searchtag.toLowerCase())) {
