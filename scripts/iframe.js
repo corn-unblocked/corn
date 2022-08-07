@@ -4,7 +4,7 @@ function updateGame() {
 	let game = location.hash.substr(1);
 	let gameUrl = getGameUrl(game);
 	let iframe = document.getElementById("iframe");
-	if (gameUrl.length == 0) {
+	if (gameUrl == null || gameUrl.length == 0) {
 		iframe.src = "/other/select.html";
 		document.title = "Corn iframe";
 	}
