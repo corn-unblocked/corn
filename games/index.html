@@ -55,7 +55,7 @@
 			function updateGames() {
 				let unfilteredGames = listGames();
 				let search = document.getElementById("searchGames").value;
-				let searchTags = search.split(' ');
+				let searchtags = search.split(' ');
 				let games = [];
 				if (search.length != 0) {
 					for (game of unfilteredGames) { // filter by name
@@ -68,9 +68,9 @@
 						let gametags = getGameTags(game);
 						let tmpbreak = false;
 						// loving that polynomial time
-						for (tag of gameTags) {
-							for (searchTag of searchTags) {
-								if (tag.toLowercase().includes(searchTag.toLowerCase())) {
+						for (tag of gametags) {
+							for (searchtag of searchtags) {
+								if (tag.toLowercase().includes(searchtag.toLowerCase())) {
 									games.push(game);
 									tmpbreak = true;
 								}
