@@ -18,6 +18,8 @@ var gamelist = {
 	"jklm": "https://jklm.fun",
 	"csonline": "https://play-cs.com",
 	"tanuki": "https://hotcorn-gamecdn.web.app/tanuki/",
+	"ubg100": "https://ubg100.github.io/games.html",
+	"totallyscience": "https://actuallymath.com",
 };
 
 var gamenames = {
@@ -40,8 +42,12 @@ var gamenames = {
 	"jklm": "BombParty",
 	"csonline": "Counter-Strike",
 	"tanuki": "Tanuki Sunset",
+	"ubg100": "UBG100",
+	"totallyscience": "Totally Science",
 };
 
 var gameinfo = {
-	"tetris": "Tetra Legends, slightly different"
+	"tetris": "Tetra Legends, slightly different",
+	"ubg100": "Game site featuring additional games",
+	"totallyscience": "Game site featuring additional games and chat",
 };
