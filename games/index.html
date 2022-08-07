@@ -49,11 +49,14 @@
 				let search = document.getElementById("searchGames").value;
 				let games = [];
 				if (search.length != 0) {
-					for (game of unfilteredGames) {
+					for (game of unfilteredGames) { // filter by name
 						let gametitle = getGameTitle(game);
 						if (gametitle.toLowerCase().includes(search.toLowerCase())) {
 							games.push(game);
 						}
+					}
+					for (game of unfilteredGames) { // filter by tag
+						let gametitle = get
 					}
 				} else {
 					games = unfilteredGames;
@@ -90,7 +93,7 @@
 				document.getElementById("iframe").style.removeProperty("position");
 			}
 			window.addEventListener("hashchange", switchGames(document.location.hash.substring(1)));
-			function copyEmbed() {
+			function copyEmbed() { // copies link to iframe
 				let iframe = document.getElementById("iframe").src;
 				navigator.clipboard.writeText(iframe);
 			}

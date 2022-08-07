@@ -25,7 +25,6 @@ var gamelist = {
 	"linerider": "https://linerider.com",
 	"powerline": "https://powerline.io",
 	"chromedino": "https://chromedino.com",
-	"doodles": "https://www.google.com/doodles",
 };
 
 var gamenames = {
@@ -55,7 +54,6 @@ var gamenames = {
 	"linerider": "Line Rider",
 	"powerline": "Powerline",
 	"chromedino": "Dinosaur Game",
-	"doodles": "Google Doodles",
 };
 
 var gameinfo = {
@@ -63,5 +61,33 @@ var gameinfo = {
 	"ubg100": "Game site featuring additional games",
 	"totallyscience": "Game site featuring additional games and chat",
 	"emulator": "Old games for emulation",
-	"doodles": "All Google Doodles",
+};
+
+var gametags = {
+	"shell": "3d fps",
+	"1v1": "3d fps",
+	"merczone": "3d fps",
+	"zombs": "2d battle royale",
+	"cookie": "2d clicker",
+	"curvefever": "2d battle",
+	"ev": "3d fps",
+	"minecraft": "3d",
+	"repuls": "3d fps",
+	"sans": "2d bullethell",
+	"smashkarts": "3d battle",
+	"splix": "2d battle territory",
+	"gats": "2d battle",
+	"tetris": "2d puzzle",
+	"moomoo": "2d battle",
+	"evoworld": "2d battle",
+	"jklm": "2d party",
+	"csonline": "3d fps",
+	"tanuki": "3d casual",
+	"ubg100": "site",
+	"totallyscience": "site chat",
+	"littlealchemy": "2d puzzle",
+	"emulator": "site emulator",
+	"linerider": "2d casual",
+	"powerline": "2d battle",
+	"chromedino": "2d casual",
 };
