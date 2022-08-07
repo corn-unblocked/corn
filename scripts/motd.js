@@ -1,5 +1,4 @@
 var motds = [
-    "Hot Corn Games - Not what you think",
     "You should play Terraria",
     "Go do your schoolwork",
     "The proxy is down... again",
@@ -11,11 +10,13 @@ var motds = [
     "Math is boring",
     "Go home nerd",
     "Does anyone even look at these?",
-    "Did you know you can add a custom game?",
+    "Did you know you can add custom games?",
     "Inspectlet is cool too",
-    "Apple Unblocked also exists",
-    "Hot Corn Proxy - Now even less GeForce Now compatible!",
+    "Also try Apple Unblocked",
+    "Corn Pr0xy - Now even less GeForce Now compatible!",
     "Select a game... now please",
     "Insert message here",
-    "The teacher is probably saying something important right now"
+    "The teacher is probably saying something important right now",
+    "People never go outside anymore",
+    "You better not be playing on this site at home",
 ];
