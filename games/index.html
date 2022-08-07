@@ -45,10 +45,10 @@
 						document.getElementById("gameInfo").style.display = "none";
 					}
 					if (getGameTags(game) != null) {
-						document.getElementById("gameInfo").style.removeProperty("display");
+						document.getElementById("gameTags").style.removeProperty("display");
 						document.getElementById("gameTags").innerHTML = "Tags - " + getGameTags(game).join(' ');
 					} else {
-						document.getElementById("gameInfo").style.display = "none";
+						document.getElementById("gameTags").style.display = "none";
 					}
 				}
 			}
