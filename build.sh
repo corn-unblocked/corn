@@ -8,10 +8,9 @@ fi
 
 case $1 in
 	"build")
+		$0 clean
 		mkdir -p public/src
-		npm install
-		npm run build
-		for file in "404.html about css devtools games img index.html license.txt node_modules other pr0xy scripts settings"; do
+		for file in "404.html about css devtools games img index.html license.txt other pr0xy scripts settings"; do
 			cp -rf $file public/
 		done
 		;;
