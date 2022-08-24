@@ -15,7 +15,7 @@ case $1 in
 		done
 		;;
 	"clean")
-		rm -r public
+		[ -d public ] && rm -r public
 		;;
 	*)
 		echo "Invalid command specified, please specify either build or clean"
