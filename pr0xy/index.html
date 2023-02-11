@@ -16,15 +16,19 @@
 			<div class="center-block">
 				<input type="text" id="text" />
 				<button class="button inline" onclick="enter()">Enter</button>
+				<input type="checkbox" id="fastProxyEnabled" title="Fast proxy is faster, but is much less reliable. Not recommended for most sites." />
+				<label for="fastProxyEnabled" title="Fast proxy is faster, but is much less reliable. Not recommended for most sites.">Use Fast Proxy</label>
 			</div>
 		</div>
 		<iframe allow="fullscreen" id="iframe" src="/other/select.html"></iframe>
 		<script>
-			var gamelist = { "proxy": "https://frightened-yak-jodhpurs.cyclic.app/loader.html" };
+			var gamelist = {
+				"proxy": "https://frightened-yak-jodhpurs.cyclic.app/loader.html",
+				"fast-proxy": "https://example.com", // todo
+			};
 		</script>
 		<script src="/scripts/gameinfo.js"></script>
 		<script>
-			let proxy = getGameUrl("proxy");
 			function setUrlForIframe(e) {
                 let input = document.getElementById("text");
                 let iframe = document.getElementById("iframe");
@@ -32,6 +36,12 @@
 				iframe.removeEventListener("load", setUrlForIframe);
 			}
 			function enter() {
+				let proxy = "";
+				if (document.getElementById("fastProxyEnabled").checked) {
+					proxy = getGameUrl("fast-proxy");
+				} else {
+					proxy = getGameUrl("proxy");
+				}
                 let iframe = document.getElementById("iframe");
 				iframe.addEventListener("load", setUrlForIframe);
 				iframe.src = proxy;
