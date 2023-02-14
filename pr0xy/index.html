@@ -16,12 +16,10 @@
 			<div class="center-block">
 				<input type="text" id="text" />
 				<select id="proxyType" class="button inline" title="Change this if you are experiencing overly slow proxying on basic websites">
-					<option value="proxy1">Proxy 1</option>
-					<option value="proxy2">Proxy 2 (TODO)</option>
-					<option value="proxy3">Proxy 3 (TODO)</option>
-					<option value="fastproxy1">Fast Proxy 1 (TODO)</option>
-					<option value="fastproxy2">Fast Proxy 2 (TODO)</option>
-					<option value="fastproxy3">Fast Proxy 3 (TODO)</option>
+					<option value="cyclic">Cyclic (Slow)</option>
+					<option value="hypertabs1">Hypertabs 1</option>
+					<option value="hypertabs2">Hypertabs 2</option>
+					<option value="holyub1">Holy Unblocker 1</option>
 					<option value="proxy">Dev Proxy</option>
 				</select>
 			</div>
@@ -29,28 +27,28 @@
 		<iframe allow="fullscreen" id="iframe" src="/other/select.html"></iframe>
 		<script>
 			var gamelist = {
-				"proxy1": "https://frightened-yak-jodhpurs.cyclic.app/loader.html",
-				"proxy2": "https://example.com",
-				"proxy3": "https://example.com",
-				"fastproxy1": "https://example.com",
-				"fastproxy2": "https://example.com",
-				"fastproxy3": "https://example.com",
+				"cyclic": "https://frightened-yak-jodhpurs.cyclic.app/bare/",
+				"hypertabs1": "https://uv.hypertabs.cc/bare1/",
+				"hypertabs2": "https://uv.hypertabs.cc/bare2/",
+				"holyub1": "https://uv.holyubofficial.net/bare1/",
 				"proxy": "https://example.com",
 			};
 		</script>
 		<script src="/scripts/gameinfo.js"></script>
 		<script>
 			function setUrlForIframe(e) {
-                let input = document.getElementById("text");
+                let input = document.getElementById("text").value;
                 let iframe = document.getElementById("iframe");
-                iframe.contentWindow.postMessage("input:" + input.value, "*");
+                let bare = getGameUrl(document.getElementById("proxyType").value);
+                let signal = "bare:" + bare;
+                signal += ";" + "url:" + url;
+				iframe.contentWindow.postMessage(signal, "*");
 				iframe.removeEventListener("load", setUrlForIframe);
 			}
 			function enter() {
-				let proxy = getGameUrl(document.getElementById("proxyType").value);
                 let iframe = document.getElementById("iframe");
 				iframe.addEventListener("load", setUrlForIframe);
-				iframe.src = proxy;
+				iframe.src = "localhost:8000"; //TODO
 			}
 			document.getElementById("text").addEventListener("keydown", function (e) { if (e.code === "Enter") { enter(); } });
 		</script>
