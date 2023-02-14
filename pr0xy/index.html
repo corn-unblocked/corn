@@ -48,7 +48,7 @@
 			function enter() {
                 let iframe = document.getElementById("iframe");
 				iframe.addEventListener("load", setUrlForIframe);
-				iframe.src = "localhost:8000"; //TODO
+				iframe.src = "http://localhost:8000/loader.html"; //TODO
 			}
 			document.getElementById("text").addEventListener("keydown", function (e) { if (e.code === "Enter") { enter(); } });
 		</script>
