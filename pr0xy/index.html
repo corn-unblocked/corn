@@ -41,7 +41,7 @@
                 let iframe = document.getElementById("iframe");
                 let bare = getGameUrl(document.getElementById("proxyType").value);
                 let signal = "bare:" + bare;
-                signal += ";" + "url:" + url;
+                signal += ";" + "url:" + input;
 				iframe.contentWindow.postMessage(signal, "*");
 				iframe.removeEventListener("load", setUrlForIframe);
 			}
