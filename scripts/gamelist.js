@@ -25,6 +25,9 @@ var gamelist = {
 	"linerider": "https://linerider.com",
 	"powerline": "https://powerline.io",
 	"chromedino": "https://chromedino.com",
+	"monkeymart": "https://freegamesonline.io/game/Monkey-Mart/",
+	"richup": "https://richup.io",
+	"bapbap": "https://bapbap.gg",
 };
 
 var gamenames = {
@@ -54,6 +57,9 @@ var gamenames = {
 	"linerider": "Line Rider",
 	"powerline": "Powerline",
 	"chromedino": "Dinosaur Game",
+	"monkeymart": "Monkey Mart",
+	"richup": "RichUp",
+	"bapbap": "Bap Bap",
 };
 
 var gameinfo = {
@@ -90,4 +96,7 @@ var gametags = {
 	"linerider": "2d casual",
 	"powerline": "2d battle",
 	"chromedino": "2d casual",
+	"monkeymart": "2d casual",
+	"richup": "2d party",
+	"bapbap": "3d battle",
 };
