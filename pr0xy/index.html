@@ -15,40 +15,51 @@
 			</div>
 			<div class="center-block">
 				<input type="text" id="text" />
-				<select id="proxyType" class="button inline" title="Change this if you are experiencing overly slow proxying on basic websites">
-					<option value="cyclic">Cyclic (Slow)</option>
-					<option value="hypertabs1">Hypertabs 1</option>
-					<option value="hypertabs2">Hypertabs 2</option>
-					<option value="holyub1">Holy Unblocker 1</option>
+				<select id="proxyType" class="button inline" title="Change this if necessary">
+					<option value="hypertabs">Hypertabs</option>
+					<option value="holyub">Holy Unblocker</option>
+					<option value="metallic">Metallic</option>
+					<option value="nebula">Nebula</option>
 					<option value="proxy">Dev Proxy</option>
 				</select>
 			</div>
 		</div>
 		<iframe allow="fullscreen" id="iframe" src="/other/select.html"></iframe>
 		<script>
-			var gamelist = {
-				"cyclic": "https://frightened-yak-jodhpurs.cyclic.app/bare/",
-				"hypertabs1": "https://uv.hypertabs.cc/bare1/",
-				"hypertabs2": "https://uv.hypertabs.cc/bare2/",
-				"holyub1": "https://uv.holyubofficial.net/bare1/",
+			// these point to service urls
+			const gamelist = {
+				"hypertabs": "https://hypertabs.cc/uv/service/",
+				"holyub": "https://holyubofficial.net/runtime~react/service/",
+				"metallic": "https://metallic.gq/ultraviolet/",
+				"nebula": "https://nebulaproxy.io/service/go/",
 				"proxy": "https://example.com",
+			};
+			// defaults to xor, can be defined here if needed
+			const codecs = {
 			};
 		</script>
 		<script src="/scripts/gameinfo.js"></script>
+		<script src="/scripts/codecs.js"></script>
 		<script>
-			function setUrlForIframe(e) {
+			function setUrlForIframe() {
                 let input = document.getElementById("text").value;
+                // basic check if url or not
+                if (input.includes(".") && !input.includes("https://"))
+					input = "https://" + input;
+				else
+					input = "https://google.com/search?q=" + input;
+                const proxy = document.getElementById("proxyType").value;
+                const codec = (codecs[proxy] != undefined) ? codecs[proxy] : "xor";
+                const encoded = Function("return " + codec + ".encode(\"" + input + "\");")()
                 let iframe = document.getElementById("iframe");
-                let bare = getGameUrl(document.getElementById("proxyType").value);
-                let signal = "bare:" + bare;
-                signal += ";" + "url:" + input;
-				iframe.contentWindow.postMessage(signal, "*");
-				iframe.removeEventListener("load", setUrlForIframe);
+                const url = getGameUrl(proxy);
+				iframe.src = url + encoded;
 			}
 			function enter() {
                 let iframe = document.getElementById("iframe");
-				iframe.addEventListener("load", setUrlForIframe);
-				iframe.src = "https://corn-proxy.web.app/loader.html"; //TODO
+                // can work out the loader later
+				iframe.src = "/other/loader.html";
+				setUrlForIframe();
 			}
 			document.getElementById("text").addEventListener("keydown", function (e) { if (e.code === "Enter") { enter(); } });
 		</script>

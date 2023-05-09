@@ -1,0 +1,31 @@
+* {
+	font-family: sans-serif;
+}
+
+body {
+	background-color: whitesmoke;
+}
+
+p {
+	width: 100%;
+	text-align: center;
+}
+
+img {
+	display: block;
+	margin: 2% auto;
+	width: 50%;
+}
+
+@keyframes loading {
+	0% {opacity: 100%;}
+	50% {opacity: 50%;}
+	100% {opacity: 100%;}
+}
+
+h1 {
+	width: 100%;
+	text-align: center;
+	animation: loading 2s infinite;
+	font-size: 64px;
+}
